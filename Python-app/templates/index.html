@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Basket Grocery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="hero">
+        <div>
+            <p class="eyebrow">Online grocery</p>
+            <h1>Fresh Basket</h1>
+            <p class="lead">Fresh produce, pantry staples, and daily essentials delivered with ease.</p>
+            <div class="hero-actions">
+                <a class="primary-btn" href="#products">Shop now</a>
+                <a class="secondary-btn" href="#about">Why us</a>
+            </div>
+        </div>
+        <div class="hero-badge">24/7 ordering • Local delivery</div>
+    </div>
+
+    <section class="info-strip" id="about">
+        <div class="info-card"><strong>Local farm picks</strong><span>Fresh ingredients every day</span></div>
+        <div class="info-card"><strong>Easy checkout</strong><span>Fast and secure ordering</span></div>
+        <div class="info-card"><strong>Family favorites</strong><span>Trusted groceries for every home</span></div>
+    </section>
+
+    <section class="section-title">
+        <div>
+            <p class="eyebrow">Featured picks</p>
+            <h2>Popular groceries</h2>
+        </div>
+    </section>
+
+    <section class="product-grid" id="products">
+        {% for product in products %}
+        <article class="product-card">
+            <div class="product-top">
+                <span class="category">{{ product.category }}</span>
+                <span class="price">{{ product.price }}</span>
+            </div>
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <button>Add to cart</button>
+        </article>
+        {% endfor %}
+    </section>
+</body>
+</html>
