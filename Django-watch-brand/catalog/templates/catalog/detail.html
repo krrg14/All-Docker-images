@@ -1,0 +1,10 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+  <article class="detail">
+    <h2>{{ watch.name }}</h2>
+    <p>{{ watch.description }}</p>
+    <p class="price">${{ watch.price }}</p>
+    <p><a href="/">Back</a></p>
+  </article>
+{% endblock %}

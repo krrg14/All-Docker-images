@@ -1,0 +1,14 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+<div class="grid">
+  {% for watch in watches %}
+    <article class="card">
+      <h2>{{ watch.name }}</h2>
+      <p>{{ watch.description }}</p>
+      <p class="price">${{ watch.price }}</p>
+      <p><a href="{% url 'catalog:detail' watch.id %}">View</a></p>
+    </article>
+  {% endfor %}
+</div>
+{% endblock %}
