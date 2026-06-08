@@ -1,4 +1,4 @@
-FROM python:3.12 AS builder
+FROM python:3.12-slim AS builder
 
 WORKDIR /app
 
@@ -14,4 +14,6 @@ COPY --from=builder /root/.local /root/.local
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 8000
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
